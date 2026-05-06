@@ -8,9 +8,34 @@ func TestCleanInput(t *testing.T) {
 	expected []string
 }{
 	{
-		input:    "  hello  world  ",
-		expected: []string{"hello", "world"},
+		input:    "  this is a teST ",
+		expected: []string{"this", "is", "a", "test"},
 	},
-	// add more cases here
+
+	{
+		input:    "CharizArd pikachu BulBasAur  ",
+		expected: []string{"charizard", "pikachu", "bulbasaur"},
+	},
+	{
+		input:    "heLLo how aRe  you ",
+		expected: []string{"hello", "how", "are", "you"},
+	},
 }
+
+for _, c := range cases {
+	actual := cleanInput(c.input)
+	if len(actual) != len(c.expected){
+		t.Errorf("length mismatch")
+		continue
+	}
+
+	for i := range actual {
+		word := actual[i]
+		expectedWord := c.expected[i]
+		if word != expectedWord {
+			t.Errorf("actual output does not match expected output")
+		}
+	}
+}
+
 }
