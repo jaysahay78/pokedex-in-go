@@ -106,5 +106,5 @@ go test ./...
 - Location areas must be loaded with `map` or `mapb` before they can be explored.
 - API responses are cached for the current process to reduce repeated network requests.
 
-###Blog
+### Blog
 link to a blog I wrote about it on substack - https://voluptatibusasper467509.substack.com/p/building-a-pokedex-in-go-what-the
