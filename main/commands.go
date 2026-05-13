@@ -137,13 +137,13 @@ func commandHelp(cfg *config, args []string) error {
 	fmt.Print(`Welcome to the Pokedex!
 Usage:
 
-help: Displays a help message
-exit: Exit the Pokedex
-map: Displays next 20 location areas
-mapb: Displays previous 20 location areas
+help: 					 Displays a help message
+exit: 					 Exit the Pokedex
+map:  					 Displays next 20 location areas
+mapb: 					 Displays previous 20 location areas
 explore <location_area>: Displays all the pokemon encounters in the specific location area
-catch <pokemon_name>: Throws a pokeball at a specific pokemon nearby to catch it
-inspect: Displays details about pokemons you have caught 
+catch <pokemon_name>: 	 Throws a pokeball at a specific pokemon nearby to catch it
+inspect: 	 			 Displays details about pokemons you have caught 
 `)
 
 	return nil
@@ -388,6 +388,7 @@ func commandPokdex(cfg *config, args []string) error {
 		fmt.Println("No pokemons caught yet!")
 	}
 
+	fmt.Println("Your pokedex:")
 	for _, pokemon := range cfg.pokemons {
 		fmt.Println("- " + pokemon.Name)
 	}
