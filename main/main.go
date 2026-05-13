@@ -13,7 +13,7 @@ import (
 func cleanInput(text string) []string {
 	text = strings.ToLower(text)
 
-	re := regexp.MustCompile(`[^a-z0-9\s]+`)
+	re := regexp.MustCompile(`[^a-z0-9\s-]+`)
 	text = re.ReplaceAllString(text, "")
 	words := strings.Fields(text)
 	return words
@@ -22,8 +22,9 @@ func cleanInput(text string) []string {
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	cfg := &config{
-		cache:   pokecache.NewCache(5 * time.Minute),
-		areaIDs: make(map[string]int),
+		cache:    pokecache.NewCache(5 * time.Minute),
+		areaIDs:  make(map[string]int),
+		pokemons: make(map[string]Pokemon),
 	}
 
 	for {
