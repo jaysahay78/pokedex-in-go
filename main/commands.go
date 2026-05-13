@@ -97,6 +97,7 @@ help: Displays a help message
 exit: Exit the Pokedex
 map: Displays next 20 location areas
 mapb: Displays previous 20 location areas
+explore <location_area>: Displays all the pokemon encounters in the specific location area
 `)
 
 	return nil
@@ -192,7 +193,6 @@ func commandMapb(cfg *config, args []string) error {
 	if err != nil {
 		return err
 	}
-	areaIDs := make(map[string]string)
 
 	cfg.next = locations.Next
 	cfg.previous = locations.Previous
@@ -200,9 +200,12 @@ func commandMapb(cfg *config, args []string) error {
 	for _, area := range locations.Results {
 		parts := strings.Split(area.URL, "/")
 
-		id := parts[len(parts)-2]
+		id, err := strconv.Atoi(parts[len(parts)-2])
+		if err != nil {
+			return err
+		}
 
-		areaIDs[area.Name] = id
+		cfg.areaIDs[area.Name] = id
 		fmt.Println(area.Name)
 	}
 
@@ -210,6 +213,10 @@ func commandMapb(cfg *config, args []string) error {
 }
 
 func commandExplore(cfg *config, args []string) error {
+	if len(args) < 1 {
+		fmt.Println("Please provide a location area")
+		return nil
+	}
 	areaName := args[0]
 	id, exists := cfg.areaIDs[areaName]
 
