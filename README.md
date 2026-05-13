@@ -98,8 +98,13 @@ go test ./...
             `-- cache.go
 ```
 
+
+
 ## Notes
 
 - Caught Pokemon are stored only in memory and reset when the CLI exits.
 - Location areas must be loaded with `map` or `mapb` before they can be explored.
 - API responses are cached for the current process to reduce repeated network requests.
+
+###Blog
+link to a blog I wrote about it on substack - https://voluptatibusasper467509.substack.com/p/building-a-pokedex-in-go-what-the
