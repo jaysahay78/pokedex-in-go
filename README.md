@@ -107,4 +107,5 @@ go test ./...
 - API responses are cached for the current process to reduce repeated network requests.
 
 ### Blog
+
 link to a blog I wrote about it on substack - https://voluptatibusasper467509.substack.com/p/building-a-pokedex-in-go-what-the
