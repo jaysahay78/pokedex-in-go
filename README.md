@@ -2,7 +2,7 @@
 
 A small interactive command-line Pokedex written in Go. It uses the [PokeAPI](https://pokeapi.co/) to browse Pokemon location areas, explore Pokemon encounters, catch Pokemon, and inspect Pokemon you have already caught.
 
-<img width="1280" height="1280" alt="image" src="https://github.com/user-attachments/assets/8c1e9382-d3c6-45b3-b68a-33eccfb31128" />
+<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/8c1e9382-d3c6-45b3-b68a-33eccfb31128" />
 
 
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
